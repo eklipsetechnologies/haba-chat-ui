@@ -1,12 +1,12 @@
 {
-  "name": "react-native-gifted-chat",
+  "name": "haba-chat-ui",
   "version": "1.0.1",
   "description": "The most complete chat UI for React Native",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FaridSafi/react-native-gifted-chat.git"
+    "url": "git+https://github.com/eklipsetechnologies/haba-chat-ui.git"
   },
   "keywords": [
     "android",
@@ -18,17 +18,14 @@
     "message",
     "chat"
   ],
-  "author": "Farid Safi",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/FaridSafi/react-native-gifted-chat/issues"
-  },
-  "homepage": "https://github.com/FaridSafi/react-native-gifted-chat#readme",
+  "author": "Eklipse Technologies",
+  "license": "MIT", 
+  "homepage": "https://github.com/eklipsetechnologies/haba-chat-ui.git",
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "./node_modules/.bin/eslint ./src/*.{ts,tsx} --fix",
-    "tsc": "node_modules/.bin/tsc --noEmit",
-    "tsc:watch": "node_modules/.bin/tsc --watch --noEmit",
+    "lint:fix": "eslint ./src/*.{ts,tsx} --fix",
+    "tsc": "tsc --noEmit",
+    "tsc:watch": "tsc --watch --noEmit",
     "start": "cd example && expo start",
     "start:web": "cd example && expo start -w --dev",
     "build": "rm -rf lib/ && node_modules/.bin/tsc && cp flow-typedefs/*.js.flow lib/",
@@ -36,7 +33,7 @@
     "test:watch": "TZ=Europe/Paris jest --watch",
     "test:coverage": "TZ=Europe/Paris jest --coverage",
     "prepublishOnly": "yarn lint && yarn build && yarn test",
-    "prettier": "./node_modules/.bin/prettier --write \"src/**/*.{ts,tsx}\""
+    "prettier": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "devDependencies": {
     "@babel/core": "7.17.9",
@@ -93,5 +90,9 @@
     "hooks": {
       "pre-commit": "yarn lint:fix && yarn prettier && yarn tsc"
     }
+  },
+  "directories": {
+    "example": "example",
+    "test": "tests"
   }
 }
